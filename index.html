@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta name="renderer" content="webkit">
+    <title>中南大学在职研究生报考咨询中心</title>
+    <meta name="keywords" content="中南大学在职研究生,在职研究生" />
+    <meta name="description" content="此平台为您提供中南大学在职研究生最新招生简章、招生动态、在职研究生网上报名交流平台。" />
+    <title></title>
+	<link rel="stylesheet" href="css/global-1.0.css">
+	<link rel="stylesheet" href="css/sweet-alert.css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+	<!--[if IE]>
+		<script type="text/javascript" src="/template/zh-cn/js/html5.js"></script>
+	<![endif]-->
+	<!--[if IE 6]>
+		<script type="text/javascript" src="/template/zh-cn/js/DD_belatedPNG_0.0.8a.min.js"></script>
+		<script>
+			DD_belatedPNG.fix('*');
+		</script>
+	<![endif]-->
+    <link rel="stylesheet" href="css/index-1.1.css">
+    <style>
+        #people{
+            position: fixed;
+            width: 500px;
+            height: 300px;
+            left: 35%;
+            top:30%;
+            display: block;
+            z-index: 10000;
+            background: url(img/1.png) center no-repeat;
+        }
+        #close{
+            position: absolute;
+            width: 20px;
+            height:20px;
+            margin-left: 457px;
+            margin-top: 10px;
+        }
+        .link{
+            position: absolute;
+            width: 160px;
+            height: 45px;
+            margin-top: 200px;
+            margin-left: 290px;
+        }
+        .wait{
+            position: absolute;
+            width: 80px;
+            height: 30px;
+            margin-left: 350px;
+            margin-top: 150px;
+        }
+    </style>
+	<!--识别手机或电脑的js开始-->
+	<script language="javascript">
+		(function(){
+		var res = GetRequest();
+		var par = res['index'];
+		if(par!='gfan'){
+		var ua=navigator.userAgent.toLowerCase();
+		var contains=function (a, b){
+		if(a.indexOf(b)!=-1){return true;}
+		};	
+		var toMobileVertion = function(){
+		window.location.href = 'http://m.cjzkedu.cn'
+		}
+		 
+		if(contains(ua,"ipad")||(contains(ua,"rv:1.2.3.4"))||(contains(ua,"0.0.0.0"))||(contains(ua,"8.0.552.237"))){return false}
+		if((contains(ua,"android") && contains(ua,"mobile"))||(contains(ua,"android") && contains(ua,"mozilla")) ||(contains(ua,"android") && contains(ua,"opera"))
+		||contains(ua,"ucweb7")||contains(ua,"iphone")){toMobileVertion();}
+		}
+		})();
+		function GetRequest() {
+		  var url = location.search; //获取url中"?"符后的字串
+		  var theRequest = new Object();
+		  if (url.indexOf("?") != -1) {
+			 var str = url.substr(1);
+			 strs = str.split("&");
+			 for(var i = 0; i < strs.length; i ++) {
+				theRequest[strs[i].split("=")[0]]=unescape(strs[i].split("=")[1]);
+			 }
+		  }
+		  return theRequest;
+		}
+	</script>
+	<!--识别手机或电脑的js结束-->
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/sweet-alert.min.js"></script>
+	<script>
+    $(function(){
+        $("#submit").click(function(){
+            $.ajax({
+                url: "register.php",
+                type: "post",
+                dataType:'html',
+                data: $("#form1").serializeArray(),
+                success:function(msg){
+                    if (msg=='请填写您的报考专业'){
+                        swal("OMG", msg, "error");
+                    }else if(msg=='请填写您的姓名'){
+                        swal("OMG", msg, "error");
+                    }
+                    else if(msg=='请输入正确的手机号码') {
+                        swal("OMG",msg,"error");
+                    }else if (msg=='数据库崩溃了，请稍后再试'){
+                        swal('OMG',msg,'error');
+                    }else {
+                        swal('GOOD!',msg,'success')
+                    }
+                }
+            });
+        });
+    })
+</script>
+</head>
+<body>
+<header id="header">
+		<nav id="nav">
+			<ul>
+				<li class="current"><a href="/">首页</a></li>
+				<li><a href="#set1titlebox">考研疑问</a></li>
+				<li><a href="#tblikbox">解决方案</a></li>
+				<li><a href="#majorbox">专业方向</a></li>
+				<li><a href="#set03box">中南优势</a></li>
+				<li><a href="#set04box">报考指南</a></li>
+				<li><a href="#set06box">考研保障</a></li>
+				<li><a href="#scene6">在线报名</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div style="height:60px;"></div>
+	<div id="scene1">
+		<article>
+			<div class="bannerFontbg">
+				<div class="bannertitle"><a><img src="img/bannerfont.png"></a></div>
+				<a href="tencent://message/?uin=992027333&Site=sc.chinaz.com&Menu=yes" target="_blank" class="Fontbg"><img src="img/menu01.png"></a>
+			</div>
+		</article>
+	</div>
+	<div id="set1titlebox">
+		<h3>考研疑问</h3>
+		<p>遇到下边这么多问题，你还怎么考中南？怎么加薪升职？</p>
+	</div>
+	<div id="set1box">
+		<div class="set1">
+			<div class="set1left">
+				<ul>
+					<li><span>A：分数不达标，没信心备考，普通院校都考不上，更别提中南？</span></li>
+					<li><span>B：时间紧，任务重做题没头绪？</span></li>
+					<li><span>C：没有院校资源，专业课难，怎么考？</span></li>
+					<li><span>D：急切想掌握考研各科复习资料，提高做题速度和准确率？</span></li>
+					<li><span>E：找不到重点，浪费时间和精力？</span></li>
+					<li><span>F：复习遇到难题，没有名师指导，怎么办？</span></li>
+					<li class="wtbox">
+						<a href="tencent://message/?uin=992027333&Site=sc.chinaz.com&Menu=yes" target="_blank" class="wt01">出现以上状况建议</a>
+						<a href="tencent://message/?uin=992027333&Site=sc.chinaz.com&Menu=yes" target="_blank" class="wt02">马上咨询中南教授</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div id="tblikbox">
+		<div id="major" class="tblikty">
+			<h3>解决方案</h3>
+			<p style="margin-bottom:56px;padding-top:8px;">因为专业，所以能给你最好的！</p>
+			<ul>
+				<li>
+					<div class="bbboxo1">你最需要什么样的课程辅导？</div>
+					<div class="bbboxo2"><p>我们有强大的师资团队！</p></div>
+				</li>
+				<li>
+					<div class="bbboxo1">您最需要什么样的复习资料？</div>
+					<div class="bbboxo2"><p>我们有个性化的考研复习规划！</p></div>
+				</li>
+				<li>
+					<div class="bbboxo1">哪套复习方法更适合您？</div>
+					<div class="bbboxo2">
+						<p style="margin-bottom:8px;">我们会跟踪您的学习进度，进行入学测试，评</p><p>估备考状态，并给出相应的复习方案。</p>		
+					</div>
+				</li>
+				<li>
+					<div class="bbboxo1">如何在邮箱的时间里创造最佳的效率？</div>
+					<div class="bbboxo2"><p style="margin-bottom:8px;">我们的教授会全程跟踪，监控学习效果，为您</p><p>及时调整复习方案。</p></div>
+				</li>
+				<li class="wtbox" style="background:none;">
+					<a href="tencent://message/?uin=992027333&Site=sc.chinaz.com&Menu=yes" target="_blank" class="wt01">咨询考研规划</a>
+					<a href="tencent://message/?uin=992027333&Site=sc.chinaz.com&Menu=yes" target="_blank" class="wt02">在线咨询</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div id="majorbox">
+		<div id="major" class="specialty">
+			<h3>热门专业方向</h3>
+			<ul>
+				<li class="specialities01">
+					<a href="">软件工程</a>
+				</li>
+				<li class="specialities02">
+					<a href="">矿业软件工程</a>
+				</li>
+				<li class="specialities03">
+					<a href="">生物医学信息技术</a>
+				</li>
+				<li class="specialities04">
+					<a href="">能源系统工程</a>
+				</li>
+				<li class="specialities05">
+					<a href="">金融信息工程</a>
+				</li>
+			</ul>
+			<div class="clear"></div>
+			<ul>
+				<li class="specialities08">
+					<a href="">铁路信息工程</a>
+				</li>
+				<li class="specialities09">
+					<a href="">教育管理</a>
+				</li>
+				<li class="specialities10">
+					<a href="">医疗管理</a>
+				</li>
+				<li class="specialities11">
+					<a href="">公共管理</a>
+				</li>
+				<li class="specialities12">
+					<a href="">生物工程</a>
+				</li>
+			</ul>
+			<div class="clear"></div>
+			<div class="morebox">
+				<p>没有找到你想要的专业方向?</p>
+				<a href="tencent://message/?uin=992027333&Site=sc.chinaz.com&Menu=yes" target="_blank" class="wt03">点击咨询教授</a>
+			</div>
+			
+		</div>
+	</div>
+	<div id="set03box">
+		<div class="setting03">
+			<h3>中南优势</h3>
+			<p>圆您考研梦，中南就是这么自信！</p>
+		</div>
+	</div>
+	<div id="set04box">
+		<div class="setting04">
+			<h3>报考指南</h3>
+			<p>GRADUATE STUDENTS ENTER ONESELF FOR AN EXAMINATION THE CONDITION</p>
+			<dl>
+				<dt><img src="img/font01.png"></dt>
+				<dd>
+				具有国民教育系列大学本科毕业学历!
+				<p>(包括成教、函授、自考等，原所学专业和年龄不限)</p>
+				</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/font02.png"></dt>
+				<dd>
+				在职考生须持本科毕业证书及学位证书复印件各三份!
+				</dd>
+			</dl>
+			<div class="clear" style="margin-bottom:30px;"></div>
+			<dl>
+				<dt><img src="img/font03.png"></dt>
+				<dd>
+				授课形式：
+				<p style="margin-bottom:0;">01.在职人员：在职学习，上课时间为节假日及双休日。</p>
+				<p style="margin-bottom:0;">02.应届本科毕业生和非在职人员：全日制授课。</p>
+				</dd>
+			</dl>
+			<dl>
+				<dt><img src="img/font04.png"></dt>
+				<dd>
+				考试与报名时间：
+				<p style="margin-bottom:0;color:#555;text-align:left;font-size:18px;font-weight:600;padding-top: 4px;">报名时间：2016年10月   考试时间：2016年12月</p>
+				</dd>
+			</dl>
+			<div class="clear"></div>
+			<div class="morebox">
+				<a href="tencent://message/?uin=992027333&Site=sc.chinaz.com&Menu=yes" target="_blank" class="wt03">点击咨询教授</a>
+			</div>
+		</div>
+	</div>
+
+		<div id="set06box">
+		<div class="setting06">
+			<h3>考研保障</h3>
+			<p>你还在犹豫什么？赶紧来报名吧！</p>
+
+		</div>
+	</div>
+	<div class="clear"></div>
+
+	<div id="scene6">
+	<div class="content">
+		<div class="register">
+		<form id="form1">
+			<div class="rediv">
+			<h4>在线提交报名信息</h4>
+				<ul>
+					<li>姓名:
+						<input class="gllgl" border="none" type="text" default="" placeholder=" " maxlength="20" autocomplete="off" name="username">
+					</li>
+					<li>性别:
+						<div class="radio-list" style="float:right;">
+							<label class="radio-inline" style="float:left;width:50px;">
+								<input type="radio" checked="checked" value="1"  name="sex">&nbsp男
+							</label>
+							<label class="radio-inline" style="float:left;width:50px;" style="width:55px;">
+								<input type="radio" value="2"  name="sex">&nbsp女
+							</label>
+						</div>
+					</li>
+
+					<li>报考专业:
+						<div class="fl item-ifo"style="float:right;margin-right:15px;">
+							<select name="major" id="nature1" tabindex="20" rel="select">
+								<option value="请选择">请选择</option>
+								<option value="软件工程">软件工程</option>
+								<option value="矿业软件工程">矿业软件工程</option>
+								<option value="生物医学信息技术">生物医学信息技术</option>
+								<option value="能源系统工程">能源系统工程</option>
+								<option value="金融信息工程">金融信息工程</option>
+								<option value="铁路信息工程">铁路信息工程</option>
+								<option value="教育管理">教育管理</option>
+								<option value="医疗管理">医疗管理</option>
+								<option value="公共管理">公共管理</option>
+								<option value="生物工程">生物工程</option>
+								<option value="其他">其他</option>
+							</select>
+							<label class="blank" id="nature_succeed"></label>
+							<span class="clr"></span>
+							<label id="nature_error"></label>
+						</div>
+					</li>
+					<li>手机号码:
+						<input class="gllgl" border="none" type="text" default="" placeholder=" " maxlength="11" autocomplete="off" name="mobile">
+					</li>
+					<li style="">邮箱:
+						<input class="gllgl" border="none" type="text" default="" placeholder=" " maxlength="15" autocomplete="off" name="QQ">
+					</li>
+				</ul>
+				<div style="background:#fff;width:557px;clear:both;border-radius:3px;margin-bottom:30px;padding:5px 3px;border:1px solid #d2d2d2;">
+					<textarea name="content" class="form-control" rows="2" placeholder="留言"style="width:550px;border:none;text-indent:6px;"></textarea>
+				</div>
+				<input type="hidden" value="研究生" name="sname"/>
+				<input type="hidden" value="研究生网" name="come"/>
+				<input type="hidden" value="研究生" name="leibie"/>
+				<input type="hidden" value="null" name="IDNO"/>
+				<input type="hidden" value="null" name="prov"/>
+				<input type="hidden" value="null" name="city"/>
+				<input type="hidden" value="null" name="xueli"/>
+				<input type="hidden" value="null" name="leibie"/>
+				<div style="margin:0 auto;">
+					<input type="button" id="submit" name="button" value="提交报名" style="background-color:rgb(7,126,203);margin-top:20px;border:none;border-radius:3px; width:260px;height:55px;color:#fff;font-size:18px;cursor:pointer"/>
+					<!-- <img src="img/bmmenu.png"> -->
+				</div>
+			</div>
+			</form>
+			<div class="bmts">
+				<h4>温馨提示</h4>
+				<ul>
+					<li>一、请如实填写报名表所列各项资料并按"提交"键。</li>
+					<li>二、提交报名成功后，会出现"报名成功！"的页面。</li>
+					<li>三、如果对此课程有任何疑问，请拨打咨询电话。
+					<p>如遇电话无法接通或占线，请先填写在线报名表，我们会尽快与您联系！</p>
+					</li>
+					<li>四、报名后我们将在工作日内第一时间与您进行电话沟通，请保证您的电话畅通。</li>
+					<li>备注：请确保您所填写信息的准确性以免延误您的上课时间。信息核对准确后点击<span>"提交报名"</span>按扭</li>
+				</ul>
+			</div>
+		</div>	
+	</div>
+	</div>
+
+	<div id="footbt">	
+		<div class="footernr">
+			<ul>
+				<li>报名地址：湖南省长沙市岳麓区麓山南路麓山门<span>版权所有：长沙市岳麓区息壤教育有限公司</span></li>
+				<li>申请硕士学位管理办公室：0731-83397776 <a style="padding:0 5px;">|</a> 联系电话：186-8479-3932 朱老师</li>
+			</ul>
+		</div>
+	</div>
+	<div class="foot-fixed">
+		<div class="fixed-content">
+			8年专注只做一件事 中南在职研究生  <span class="foot1">考前压题培训班</span> 名额仅限<span class="foot2">前50名!!</span> <span class="button"><a href="">马上报名></a></span>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){  
+		  $('a[href*=#],area[href*=#]').click(function() {
+		    if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+		      var $target = $(this.hash);
+		      $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+		      if ($target.length) {
+		        var targetOffset = $target.offset().top;
+		        $('html,body').animate({
+		          scrollTop: targetOffset-50+'px'
+		        },
+		        1000);
+		        return false;
+		      }
+		    }
+		  });
+		})
+	</script>
+<!-- 代码 开始 -->
+<div id="floatDivBoxs">
+    <div class="floatShadow">
+		<p style="bottom:0;margin:0;padding:0;line-height:0;"><img src="img/jsrwbg.png"></p>
+    </div>
+    <div class="floatDbg"><a href="#" style="color:#fff;">不懂的问教授</a></div>
+</div>
+<div id="people">
+        <a href="javascript:void(0)" onclick="document.getElementById('people').style.display='none'">
+            <div id="close" ></div>
+        </a>
+        <a target="_blank" href="tencent://message/?uin=992027333&Site=sc.chinaz.com&Menu=yes">
+        <div class="link"></div>
+        </a>
+        <a href="javascript:void(0)" onclick="document.getElementById('people').style.display='none'">
+            <div class="wait"></div>
+        </a>
+    </div>
+    <script type="text/javascript">
+        function shutdown() {
+            var div=document.getElementById("people").style.display='block';
+        }
+        var t2 = window.setInterval("shutdown()",20000);
+    </script>
+<script type="text/javascript" src="js/lrtk.js"></script>
+<!-- <script src="http://mp.jsbcair.cn/qq.js"></script> -->
+<!-- 代码 结束 -->
+</body>
+</html>
